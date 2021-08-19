@@ -47,8 +47,16 @@ val networkModule = module {
 }
 
 val repositoryModule = module {
-    single { LocalDataSource(get()) }
-    single { RemoteDataSource(get()) }
-    factory { AppExecutors() }
-    single<ITourismRepository> { TourismRepository(get(), get(), get()) }
+    single {
+        LocalDataSource(get())
+    }
+    single {
+        RemoteDataSource(get())
+    }
+    factory {
+        AppExecutors()
+    }
+    single<ITourismRepository> {
+        TourismRepository(get(), get(), get())
+    }
 }
