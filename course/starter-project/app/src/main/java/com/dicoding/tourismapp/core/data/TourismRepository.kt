@@ -1,19 +1,21 @@
 package com.dicoding.tourismapp.core.data
 
-import androidx.lifecycle.LiveData
-import com.dicoding.tourismapp.core.data.source.remote.network.ApiResponse
 import com.dicoding.tourismapp.core.data.source.local.LocalDataSource
-import com.dicoding.tourismapp.core.data.source.local.entity.TourismEntity
 import com.dicoding.tourismapp.core.data.source.remote.RemoteDataSource
+import com.dicoding.tourismapp.core.data.source.remote.network.ApiResponse
 import com.dicoding.tourismapp.core.data.source.remote.response.TourismResponse
+import com.dicoding.tourismapp.core.domain.model.Tourism
+import com.dicoding.tourismapp.core.domain.repository.ITourismRepository
 import com.dicoding.tourismapp.core.utils.AppExecutors
 import com.dicoding.tourismapp.core.utils.DataMapper
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class TourismRepository private constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
-) {
+): ITourismRepository {
 
     companion object {
         @Volatile
@@ -29,30 +31,38 @@ class TourismRepository private constructor(
             }
     }
 
-    fun getAllTourism(): LiveData<Resource<List<TourismEntity>>> =
-        object : NetworkBoundResource<List<TourismEntity>, List<TourismResponse>>(appExecutors) {
-            override fun loadFromDB(): LiveData<List<TourismEntity>> {
-                return localDataSource.getAllTourism()
+    override fun getAllTourism(): Flow<Resource<List<Tourism>>> =
+        object : NetworkBoundResource<List<Tourism>, List<TourismResponse>>(){
+            override fun loadFromDB(): Flow<List<Tourism>> {
+                return localDataSource.getAllTourism().map {
+                    DataMapper.mapEntitiesToDomain(it)
+                }
             }
 
-            override fun shouldFetch(data: List<TourismEntity>?): Boolean =
-                data == null || data.isEmpty()
+            override fun shouldFetch(data: List<Tourism>?): Boolean {
+                return data == null || data.isEmpty()
+            }
 
-            override fun createCall(): LiveData<ApiResponse<List<TourismResponse>>> =
-                remoteDataSource.getAllTourism()
+            override suspend fun createCall(): Flow<ApiResponse<List<TourismResponse>>> {
+                return remoteDataSource.getAllTourism()
+            }
 
-            override fun saveCallResult(data: List<TourismResponse>) {
+            override suspend fun saveCallResult(data: List<TourismResponse>) {
                 val tourismList = DataMapper.mapResponsesToEntities(data)
                 localDataSource.insertTourism(tourismList)
             }
-        }.asLiveData()
 
-    fun getFavoriteTourism(): LiveData<List<TourismEntity>> {
-        return localDataSource.getFavoriteTourism()
+        }.asFlow()
+
+    override fun getFavoriteTourism(): Flow<List<Tourism>> {
+        return localDataSource.getFavoriteTourism().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
     }
 
-    fun setFavoriteTourism(tourism: TourismEntity, state: Boolean) {
-        appExecutors.diskIO().execute { localDataSource.setFavoriteTourism(tourism, state) }
+    override fun setFavoriteTourism(tourism: Tourism, state: Boolean) {
+        val tourismEntity = DataMapper.mapDomainToEntity(tourism)
+        appExecutors.diskIO().execute { localDataSource.setFavoriteTourism(tourismEntity, state) }
     }
 }
 
