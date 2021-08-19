@@ -1,6 +1,10 @@
 package com.dicoding.course.simplelogin
 
-class UserRepository(private val sesi: SessionManager) {
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class UserRepository @Inject constructor(private val sesi: SessionManager) {
     fun loginUser(username: String) {
         sesi.createLoginSession()
         sesi.saveToPreference(SessionManager.KEY_USERNAME, username)
