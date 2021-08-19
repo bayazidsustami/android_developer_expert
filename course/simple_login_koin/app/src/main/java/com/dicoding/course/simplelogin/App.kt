@@ -1,15 +1,11 @@
 package com.dicoding.course.simplelogin
 
 import android.app.Application
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+import com.dicoding.course.simplelogin.di.AppComponent
+import com.dicoding.course.simplelogin.di.DaggerAppComponent
 
 open class App : Application(){
-    override fun onCreate() {
-        super.onCreate()
-        startKoin {
-            androidContext(this@App)
-            modules(storageModule)
-        }
+    val appComponent: AppComponent by lazy {
+        DaggerAppComponent.factory().create(applicationContext)
     }
 }
