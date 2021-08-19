@@ -23,11 +23,13 @@ buildscript {
     ext.retrofit_version = "2.9.0"
     ext.logging_interceptor_version = "4.9.0"
 
-    ext.rxjava_version = "2.2.19"
-    ext.rxandroid_version = "2.1.1"
+    //ext.rxjava_version = "2.2.19"
+    //ext.rxandroid_version = "2.1.1"
     ext.lifecycle_version = "2.3.1"
 
     ext.kotlin_coroutines_version = "1.4.3"
+
+    ext.koin_version = "2.1.6"
 
     repositories {
         google()
