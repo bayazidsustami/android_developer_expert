@@ -1,23 +1,34 @@
 package com.dicoding.tourismapp.favorite
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.tourismapp.App
 import com.dicoding.tourismapp.core.ui.TourismAdapter
+import com.dicoding.tourismapp.core.ui.ViewModelFactory
 import com.dicoding.tourismapp.databinding.FragmentFavoriteBinding
 import com.dicoding.tourismapp.detail.DetailTourismActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 class FavoriteFragment : Fragment() {
 
-    private val favoriteViewModel: FavoriteViewModel by viewModel()
+    @Inject
+    lateinit var factory: ViewModelFactory
+    private val favoriteViewModel: FavoriteViewModel by viewModels { factory }
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as App).appComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
