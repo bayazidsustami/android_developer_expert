@@ -1,4 +1,4 @@
-package com.dicoding.course.simplelogin
+package com.dicoding.course.core
 
 import javax.inject.Inject
 import javax.inject.Singleton
