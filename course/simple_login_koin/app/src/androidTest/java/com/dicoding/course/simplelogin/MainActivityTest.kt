@@ -1,5 +1,6 @@
 package com.dicoding.course.simplelogin
 
+import com.dicoding.course.core.UserRepository
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
