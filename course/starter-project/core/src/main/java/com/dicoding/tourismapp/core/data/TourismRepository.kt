@@ -1,6 +1,5 @@
 package com.dicoding.tourismapp.core.data
 
-import com.dicoding.tourismapp.core.data.source.local.LocalDataSource
 import com.dicoding.tourismapp.core.data.source.remote.RemoteDataSource
 import com.dicoding.tourismapp.core.data.source.remote.network.ApiResponse
 import com.dicoding.tourismapp.core.data.source.remote.response.TourismResponse
@@ -13,12 +12,12 @@ import kotlinx.coroutines.flow.map
 
 class TourismRepository constructor(
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: LocalDataSource,
+    private val localDataSource: com.dicoding.tourismapp.core.data.source.local.LocalDataSource,
     private val appExecutors: AppExecutors
 ): ITourismRepository {
 
-    override fun getAllTourism(): Flow<Resource<List<Tourism>>> =
-        object : NetworkBoundResource<List<Tourism>, List<TourismResponse>>(){
+    override fun getAllTourism(): Flow<com.dicoding.tourismapp.core.data.Resource<List<Tourism>>> =
+        object : com.dicoding.tourismapp.core.data.NetworkBoundResource<List<Tourism>, List<TourismResponse>>(){
             override fun loadFromDB(): Flow<List<Tourism>> {
                 return localDataSource.getAllTourism().map {
                     DataMapper.mapEntitiesToDomain(it)
