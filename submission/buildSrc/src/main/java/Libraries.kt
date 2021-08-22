@@ -16,6 +16,8 @@ object Libraries {
     const val okhttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logger}"
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
+    const val coroutine_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine_android}"
 }
 
 object TestLibraries{

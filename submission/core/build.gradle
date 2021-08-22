@@ -18,6 +18,9 @@ android {
     }
 
     buildTypes {
+        debug{
+            buildConfigField "String", "BASE_URL", AppConfig.base_url
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -34,6 +37,8 @@ android {
 
 dependencies {
 
+    implementation Libraries.core_ktx
+    
     implementation Libraries.retrofit
     implementation Libraries.gson
     implementation Libraries.okhttp_interceptor
@@ -44,6 +49,9 @@ dependencies {
 
     implementation Libraries.hilt
     kapt Libraries.hilt_compiler
+
+    implementation Libraries.coroutine
+    implementation Libraries.coroutine_android
 
     testImplementation TestLibraries.junit
 }
