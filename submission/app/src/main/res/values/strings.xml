@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">The Sports</string>
     <string name="title_favorite">Favorite</string>
+    <string name="image_description">images</string>
+    <string name="venue">Venue : %s</string>
+    <string name="country">Country : %s</string>
 </resources>

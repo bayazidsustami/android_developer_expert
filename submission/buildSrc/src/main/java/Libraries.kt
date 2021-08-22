@@ -21,6 +21,7 @@ object Libraries {
     const val lifecycle_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     const val activity_ktx = "androidx.activity:activity-ktx:${Versions.activity_ktx}"
     const val fragment_ktx = "androidx.fragment:fragment-ktx:$${Versions.fragment_ktx}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 }
 
 object TestLibraries{

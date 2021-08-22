@@ -1,5 +1,9 @@
 package com.dicoding.submission.thesports.core.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class EventDomainModel(
     val idEvent: String,
     val idLeague: String,
@@ -18,4 +22,4 @@ data class EventDomainModel(
     val country: String,
     val thumbnail: String,
     var isFavorite: Boolean
-)
+): Parcelable

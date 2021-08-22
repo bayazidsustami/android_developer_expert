@@ -1,6 +1,7 @@
 package com.dicoding.submission.thesports.favorite
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import com.dicoding.submission.thesports.favorite.component.DaggerFavoriteCompon
 import com.dicoding.submission.thesports.favorite.databinding.FragmentFavoriteBinding
 import com.dicoding.submission.thesports.favorite.viewModel.FavoriteViewModel
 import com.dicoding.submission.thesports.favorite.viewModel.FavoriteViewModelFactory
+import com.dicoding.submission.thesports.ui.detail.DetailMatchActivity
 import com.dicoding.submission.thesports.ui.home.EventAdapter
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
@@ -38,6 +40,13 @@ class FavoriteFragment: BaseFragment<FragmentFavoriteBinding>(
         initAdapter()
         viewModel.listFavoriteUseCase.observe(viewLifecycleOwner){result ->
             adapter.submitList(result)
+        }
+
+        adapter.onItemClick = {data ->
+            val intent = Intent(requireContext(), DetailMatchActivity::class.java).apply {
+                putExtra(DetailMatchActivity.DETAIL_EXTRA, data)
+            }
+            startActivity(intent)
         }
     }
 

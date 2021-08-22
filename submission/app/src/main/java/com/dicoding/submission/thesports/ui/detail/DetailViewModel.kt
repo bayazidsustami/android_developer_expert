@@ -6,9 +6,10 @@ import com.dicoding.submission.thesports.core.domain.model.EventDomainModel
 import com.dicoding.submission.thesports.core.domain.useCase.EventUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class DetailViewModel(
+class DetailViewModel @Inject constructor(
     private val useCase: EventUseCase
 ): ViewModel() {
 

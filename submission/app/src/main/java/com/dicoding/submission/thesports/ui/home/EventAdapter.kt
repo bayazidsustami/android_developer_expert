@@ -1,5 +1,6 @@
 package com.dicoding.submission.thesports.ui.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,9 +11,12 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     private var list: List<EventDomainModel> = listOf()
 
+    var onItemClick: ((EventDomainModel) -> Unit)? = null
+
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<EventDomainModel>){
         this.list = list
-        notifyItemRangeInserted(0, list.size)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,6 +40,10 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.ViewHolder>() {
             binding.homeScore.text = data.homeScore
             binding.awayScore.text = data.awayScore
             binding.eventDate.text = data.dataEvent.replace("-","/")
+
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(data)
+            }
         }
     }
 }

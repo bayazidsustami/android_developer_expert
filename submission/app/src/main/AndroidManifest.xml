@@ -14,7 +14,8 @@
         android:theme="@style/Theme.TheSports">
         <activity
             android:name=".ui.detail.DetailMatchActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.TheSports.NoActionBar"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

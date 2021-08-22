@@ -1,5 +1,6 @@
 package com.dicoding.submission.thesports.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import com.dicoding.submission.thesports.commons.extensions.gone
 import com.dicoding.submission.thesports.commons.extensions.visible
 import com.dicoding.submission.thesports.core.data.commons.Resource
 import com.dicoding.submission.thesports.databinding.FragmentHomeBinding
+import com.dicoding.submission.thesports.ui.detail.DetailMatchActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +22,13 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
     override fun onViewCreated(savedInstanceState: Bundle?) {
         initAdapter()
         observeResult()
+
+        adapter.onItemClick = {data ->
+            val intent = Intent(requireContext(), DetailMatchActivity::class.java).apply {
+                putExtra(DetailMatchActivity.DETAIL_EXTRA, data)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun observeResult(){

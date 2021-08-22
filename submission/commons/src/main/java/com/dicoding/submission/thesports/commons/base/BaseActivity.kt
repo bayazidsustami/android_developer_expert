@@ -16,9 +16,9 @@ abstract class BaseActivity<B: ViewBinding>(
         get() = _binding as B
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        _binding = bindingFactory(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        _binding = bindingFactory(layoutInflater)
+        setContentView(requireNotNull(_binding).root)
         onCreateView(savedInstanceState)
     }
 

@@ -20,4 +20,5 @@ object Versions {
     const val activity_ktx = "1.3.1"
     const val fragment_ktx = "1.3.6"
     const val annotation = "1.2.0"
+    const val glide = "4.12.0"
 }
