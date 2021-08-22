@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    implementation project(":commons")
+    implementation project(Modules.commons)
     //implementation Libraries.core_ktx
     implementation Libraries.appcompat
     implementation Libraries.material_design
