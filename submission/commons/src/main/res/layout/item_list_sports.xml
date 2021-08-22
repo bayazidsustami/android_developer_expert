@@ -17,27 +17,18 @@
             android:id="@+id/homeName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="12sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/homeBadge"
-            app:layout_constraintStart_toStartOf="@+id/homeBadge"
-            app:layout_constraintTop_toBottomOf="@+id/homeBadge"
-            tools:text="ARSENAL" />
-
-        <ImageView
-            android:id="@+id/homeBadge"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="@string/home_badge"
-            android:scaleType="fitXY"
             app:layout_constraintEnd_toStartOf="@+id/constrainNested"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.505"
+            tools:text="ARSENAL" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constrainNested"
@@ -108,28 +99,19 @@
             android:id="@+id/awayName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="12sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/awayBadge"
-            app:layout_constraintStart_toStartOf="@+id/awayBadge"
-            app:layout_constraintTop_toBottomOf="@+id/awayBadge"
-            tools:text="REAL MADRID" />
-
-        <ImageView
-            android:id="@+id/awayBadge"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="@string/away_badge"
-            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/constrainNested"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.506"
+            tools:text="REAL MADRID" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
