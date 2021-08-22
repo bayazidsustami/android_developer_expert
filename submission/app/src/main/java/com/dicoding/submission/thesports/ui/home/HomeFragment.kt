@@ -1,4 +1,4 @@
-package com.dicoding.submission.thesports.ui
+package com.dicoding.submission.thesports.ui.home
 
 import android.os.Bundle
 import android.util.Log

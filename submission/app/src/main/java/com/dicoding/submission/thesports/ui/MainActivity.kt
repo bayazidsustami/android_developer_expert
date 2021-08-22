@@ -1,7 +1,8 @@
-package com.dicoding.submission.thesports
+package com.dicoding.submission.thesports.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.submission.thesports.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
