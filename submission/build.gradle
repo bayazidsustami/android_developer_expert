@@ -9,6 +9,7 @@ buildscript {
         classpath BuildPlugins.kotlin
         classpath BuildPlugins.INSTANCE.saveArgs
         classpath BuildPlugins.INSTANCE.hilt
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21'
     }
 }
 

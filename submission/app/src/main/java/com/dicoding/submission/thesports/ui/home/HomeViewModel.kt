@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val useCase: EventUseCase
+    useCase: EventUseCase
 ): ViewModel() {
     val listEvent = useCase.getAllEvent().asLiveData()
 }
