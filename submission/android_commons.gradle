@@ -1,0 +1,34 @@
+/*
+    shared dependencies
+ */
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion AppConfig.targetSdk
+
+    defaultConfig {
+        minSdkVersion AppConfig.minSdk
+        targetSdkVersion AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies{
+    implementation Libraries.core_ktx
+}

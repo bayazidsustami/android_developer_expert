@@ -1,12 +1,12 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
+
 apply from: '../android_commons.gradle'
 
 android {
-
     defaultConfig {
-        applicationId AppConfig.appId
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -18,11 +18,10 @@ android {
 }
 
 dependencies {
-    implementation project(":commons")
+
     //implementation Libraries.core_ktx
     implementation Libraries.appcompat
-    implementation Libraries.material_design
-    implementation Libraries.constraint_layout
+
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.junit_ext
     androidTestImplementation TestLibraries.espresso_core
