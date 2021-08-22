@@ -1,4 +1,4 @@
-package com.dicoding.submission.thesports.core.data
+package com.dicoding.submission.thesports.core.data.remote
 
 import com.dicoding.submission.thesports.core.data.remote.network.ApiResponse
 import com.dicoding.submission.thesports.core.data.remote.network.ApiService

@@ -1,5 +1,6 @@
 package com.dicoding.submission.thesports.core.di
 
+import com.dicoding.submission.thesports.core.BuildConfig
 import com.dicoding.submission.thesports.core.data.remote.network.ApiService
 import dagger.Module
 import dagger.Provides
@@ -26,7 +27,7 @@ class NetworkModule {
     @Provides
     fun provideApiService(okHttpClient: OkHttpClient): ApiService{
         val retrofit = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
