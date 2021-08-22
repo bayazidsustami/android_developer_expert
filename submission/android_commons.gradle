@@ -2,6 +2,7 @@
     shared dependencies
  */
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion AppConfig.targetSdk
@@ -33,4 +34,10 @@ dependencies{
     implementation Libraries.core_ktx
     implementation Libraries.constraint_layout
     implementation Libraries.card_view
+
+    implementation Libraries.hilt
+    kapt Libraries.hilt_compiler
+
+    implementation Libraries.coroutine
+    implementation Libraries.coroutine_android
 }

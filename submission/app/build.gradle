@@ -24,6 +24,10 @@ dependencies {
     implementation Libraries.appcompat
     implementation Libraries.material_design
     implementation Libraries.constraint_layout
+    implementation Libraries.lifecycle_ktx
+    implementation Libraries.activity_ktx
+    implementation Libraries.fragment_ktx
+
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.junit_ext
     androidTestImplementation TestLibraries.espresso_core

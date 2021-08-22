@@ -16,4 +16,7 @@ object Versions {
     const val retrofit = "2.9.0"
     const val logger = "4.9.0"
     const val hilt = "2.36"
+    const val lifecycle = "2.3.1"
+    const val activity_ktx = "1.3.1"
+    const val fragment_ktx = "1.3.6"
 }

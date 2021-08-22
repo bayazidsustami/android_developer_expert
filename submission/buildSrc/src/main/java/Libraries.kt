@@ -18,6 +18,9 @@ object Libraries {
     const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
     const val coroutine_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine_android}"
+    const val lifecycle_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val activity_ktx = "androidx.activity:activity-ktx:${Versions.activity_ktx}"
+    const val fragment_ktx = "androidx.fragment:fragment-ktx:$${Versions.fragment_ktx}"
 }
 
 object TestLibraries{
