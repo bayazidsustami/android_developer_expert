@@ -31,4 +31,6 @@ android {
 
 dependencies{
     implementation Libraries.core_ktx
+    implementation Libraries.constraint_layout
+    implementation Libraries.card_view
 }

@@ -7,6 +7,7 @@ object Libraries {
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigation_dfm = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val card_view = "androidx.cardview:cardview:${Versions.card_view}"
 }
 
 object TestLibraries{

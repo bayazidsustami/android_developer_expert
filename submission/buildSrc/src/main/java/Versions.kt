@@ -9,4 +9,5 @@ object Versions {
     const val junit_ext = "1.1.3"
     const val espresso_core = "3.4.0"
     const val navigation = "2.3.5"
+    const val card_view = "1.0.0"
 }
