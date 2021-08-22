@@ -1,3 +1,5 @@
+import org.gradle.api.internal.artifacts.Module
+
 plugins {
     id 'com.android.application'
     id 'androidx.navigation.safeargs'
@@ -20,13 +22,11 @@ android {
 
 dependencies {
     implementation project(Modules.commons)
-    //implementation Libraries.core_ktx
+    implementation project(Modules.core)
+
     implementation Libraries.appcompat
     implementation Libraries.material_design
     implementation Libraries.constraint_layout
-    implementation Libraries.lifecycle_ktx
-    implementation Libraries.activity_ktx
-    implementation Libraries.fragment_ktx
 
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.junit_ext

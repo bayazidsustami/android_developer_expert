@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -41,11 +42,11 @@ dependencies {
     
     implementation Libraries.retrofit
     implementation Libraries.gson
-    implementation Libraries.okhttp_interceptor
+    api Libraries.okhttp_interceptor
 
-    implementation Libraries.room
+    api Libraries.room
     kapt Libraries.room_compiler
-    implementation Libraries.room_ktx
+    api Libraries.room_ktx
 
     implementation Libraries.hilt
     kapt Libraries.hilt_compiler
