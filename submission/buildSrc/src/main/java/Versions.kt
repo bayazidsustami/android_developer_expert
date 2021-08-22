@@ -10,4 +10,10 @@ object Versions {
     const val espresso_core = "3.4.0"
     const val navigation = "2.3.5"
     const val card_view = "1.0.0"
+    const val room = "2.3.0"
+    const val coroutine = "1.4.1"
+    const val coroutine_android = "1.4.3"
+    const val retrofit = "2.9.0"
+    const val logger = "4.9.0"
+    const val hilt = "2.36"
 }

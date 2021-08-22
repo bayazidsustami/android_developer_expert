@@ -8,6 +8,14 @@ object Libraries {
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigation_dfm = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
     const val card_view = "androidx.cardview:cardview:${Versions.card_view}"
+    const val room = "androidx.room:room-runtime:${Versions.room}"
+    const val room_compiler = "androidx.room:room-compiler:${Versions.room}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val okhttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logger}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object TestLibraries{
