@@ -49,4 +49,9 @@ dependencies{
 
     implementation Libraries.coroutine
     implementation Libraries.coroutine_android
+
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.junit_ext
+    androidTestImplementation TestLibraries.espresso_core
+    androidTestImplementation TestLibraries.annotationX
 }

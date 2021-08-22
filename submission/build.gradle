@@ -6,12 +6,9 @@ buildscript {
     }
     dependencies {
         classpath BuildPlugins.INSTANCE.android
-        classpath BuildPlugins.INSTANCE.kotlin
+        classpath BuildPlugins.kotlin
         classpath BuildPlugins.INSTANCE.saveArgs
         classpath BuildPlugins.INSTANCE.hilt
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 

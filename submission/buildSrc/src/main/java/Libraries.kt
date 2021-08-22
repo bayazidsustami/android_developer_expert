@@ -28,4 +28,5 @@ object TestLibraries{
     const val junit_ext = "androidx.test.ext:junit:${Versions.junit_ext}"
     const val espresso_core = "androidx.test.espresso:espresso-core:${Versions.espresso_core}"
     const val navigation = "androidx.navigation:navigation-testing:${Versions.navigation}"
+    const val annotationX = "androidx.annotation:annotation:${Versions.annotation}"
 }

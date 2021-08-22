@@ -9,3 +9,4 @@ rootProject.name = "The Sports"
 include ':app'
 include ':commons'
 include ':core'
+include ':favorite'

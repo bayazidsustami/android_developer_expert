@@ -7,5 +7,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.dicoding.submission.thesports.ui.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.dicoding.submission.thesports.favorite.FavoriteFragment"
+        app:moduleName="The_Sports.favorite"
+        android:label="FavoriteFragment" />
 </navigation>
