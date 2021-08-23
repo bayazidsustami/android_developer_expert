@@ -1,0 +1,57 @@
+/*
+    shared dependencies
+ */
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion AppConfig.targetSdk
+
+    defaultConfig {
+        minSdkVersion AppConfig.minSdk
+        targetSdkVersion AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies{
+    implementation Libraries.core_ktx
+    implementation Libraries.constraint_layout
+    implementation Libraries.card_view
+
+    implementation Libraries.hilt
+    kapt Libraries.hilt_compiler
+
+    implementation Libraries.navigation_ui
+    implementation Libraries.navigation_fragment
+    implementation Libraries.navigation_dfm
+
+    implementation Libraries.lifecycle_ktx
+    implementation Libraries.activity_ktx
+    implementation Libraries.fragment_ktx
+
+    implementation Libraries.coroutine
+    implementation Libraries.coroutine_android
+
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.junit_ext
+    androidTestImplementation TestLibraries.espresso_core
+    androidTestImplementation TestLibraries.annotationX
+}

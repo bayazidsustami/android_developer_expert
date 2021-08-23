@@ -1,0 +1,17 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath BuildPlugins.INSTANCE.android
+        classpath BuildPlugins.INSTANCE.kotlin
+        classpath BuildPlugins.INSTANCE.saveArgs
+        classpath BuildPlugins.INSTANCE.hilt
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

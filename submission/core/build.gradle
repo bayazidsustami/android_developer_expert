@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk AppConfig.targetSdk
+
+    defaultConfig {
+        minSdk AppConfig.minSdk
+        targetSdk AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug{
+            buildConfigField "String", "BASE_URL", AppConfig.base_url
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation Libraries.core_ktx
+    
+    implementation Libraries.retrofit
+    implementation Libraries.gson
+    api Libraries.okhttp_interceptor
+
+    api Libraries.room
+    kapt Libraries.room_compiler
+    api Libraries.room_ktx
+
+    implementation Libraries.hilt
+    kapt Libraries.hilt_compiler
+
+    implementation Libraries.coroutine
+    implementation Libraries.coroutine_android
+
+    testImplementation TestLibraries.junit
+}

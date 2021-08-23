@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'kotlin-android'
+}
+
+apply from: '../android_commons.gradle'
+
+android {
+
+    defaultConfig {
+        applicationId "com.dicoding.submission.thesports.favorite"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(Modules.app)
+    implementation project(Modules.commons)
+    implementation project(Modules.core)
+}
