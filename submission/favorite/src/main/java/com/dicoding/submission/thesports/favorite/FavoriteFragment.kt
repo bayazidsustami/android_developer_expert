@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.submission.thesports.commons.base.BaseFragment
+import com.dicoding.submission.thesports.commons.extensions.gone
+import com.dicoding.submission.thesports.commons.extensions.visible
 import com.dicoding.submission.thesports.di.FavoriteModuleDependencies
 import com.dicoding.submission.thesports.favorite.component.DaggerFavoriteComponent
 import com.dicoding.submission.thesports.favorite.databinding.FragmentFavoriteBinding
@@ -39,7 +41,15 @@ class FavoriteFragment: BaseFragment<FragmentFavoriteBinding>(
     override fun onViewCreated(savedInstanceState: Bundle?) {
         initAdapter()
         viewModel.listFavoriteUseCase.observe(viewLifecycleOwner){result ->
-            adapter.submitList(result)
+            if (result.isNotEmpty()){
+                adapter.submitList(result)
+            } else{
+                binding.rvListEvent.gone()
+                binding.tvError.run {
+                    visible()
+                    text = resources.getString(R.string.empty_list)
+                }
+            }
         }
 
         adapter.onItemClick = {data ->

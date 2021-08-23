@@ -24,13 +24,15 @@ class DetailMatchActivity : BaseActivity<ActivityDetailMatchBinding>(
                 .load(detail.thumbnail)
                 .into(binding.ivDetailImage)
 
-            binding.tvMatch.text = detail.eventName
-            binding.eventDate.text = detail.dataEvent
-            binding.homeScore.text = detail.homeScore
-            binding.awayScore.text = detail.awayScore
-            binding.tvVenue.text = resources.getString(R.string.venue, detail.venue)
-            binding.tvCountry.text = resources.getString(R.string.country, detail.country)
+            binding.run {
+                tvMatch.text = detail.eventName
+                eventDate.text = detail.dataEvent
+                homeScore.text = detail.homeScore
+                awayScore.text = detail.awayScore
+                tvVenue.text = resources.getString(R.string.venue, detail.venue)
+                tvCountry.text = resources.getString(R.string.country, detail.country)
 
+            }
             var isFavorite = detail.isFavorite
             setStatusFavorite(isFavorite)
 
