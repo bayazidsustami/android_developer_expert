@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Leak App</string>
+    <string name="power_connected">Power Connected</string>
+    <string name="power_disconnected">Power Disconnected</string>
 </resources>
