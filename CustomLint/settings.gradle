@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Custom Lint"
 include ':app'
+include ':lint'
