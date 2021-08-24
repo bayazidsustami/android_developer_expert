@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">App Test Crash</string>
+    <string name="crash_this_app">Crash This App</string>
+</resources>
