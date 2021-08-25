@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.view.animation.BounceInterpolator
 import android.widget.Button
 import android.widget.Toast
@@ -25,6 +26,8 @@ import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
 import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute
 import retrofit2.Call
@@ -73,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 showMyLocation(style)
                 addMarkerOnClick()
                 showDicodingSpace()
-
+                showNavigation()
             }
         }
     }
@@ -87,9 +90,11 @@ class MainActivity : AppCompatActivity() {
                     .withIconImage(ICON_ID)
                     .withDraggable(true)
             )
+
             val destination = Point.fromLngLat(point.longitude, point.latitude)
             val origin = Point.fromLngLat(myLocation.longitude, myLocation.latitude)
             requestRoute(origin, destination)
+            btnNavigation.visibility = View.VISIBLE
             true
         }
     }
@@ -192,6 +197,17 @@ class MainActivity : AppCompatActivity() {
         )
 
         mapBox.moveCamera(CameraUpdateFactory.newLatLngZoom(dicodingSpace, 8.0))
+    }
+
+    private fun showNavigation(){
+        btnNavigation.setOnClickListener {
+            val simulateRoute = true
+            val options = NavigationLauncherOptions.builder()
+                .directionsRoute(currentRoute)
+                .shouldSimulateRoute(simulateRoute)
+                .build()
+            NavigationLauncher.startNavigation(this, options)
+        }
     }
 
     override fun onStart() {
