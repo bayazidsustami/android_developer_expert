@@ -48,14 +48,28 @@ class MainActivity : AppCompatActivity() {
             mapBox.setStyle(Style.MAPBOX_STREETS){style ->
                 symbolManager = SymbolManager(mapview, mapBox, style)
                 symbolManager.iconAllowOverlap = true
-                showMyLocation(style)
-
                 style.addImage(
                     ICON_ID,
                     BitmapFactory.decodeResource(resources, R.drawable.mapbox_marker_icon_default)
                 )
-                //showDicodingSpace()
+                showMyLocation(style)
+                addMarkerOnClick()
+
+
             }
+        }
+    }
+
+    private fun addMarkerOnClick() {
+        mapBox.addOnMapClickListener { point ->
+            symbolManager.deleteAll()
+            symbolManager.create(
+                SymbolOptions()
+                    .withLatLng(LatLng(point.latitude, point.longitude))
+                    .withIconImage(ICON_ID)
+                    .withDraggable(true)
+            )
+            true
         }
     }
 
