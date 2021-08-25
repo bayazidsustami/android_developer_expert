@@ -33,11 +33,13 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 }
 
 dependencies {
     implementation project(":app")
     implementation project(":core")
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$mapbox_version"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:$mapbox_annotation_version"
 }
