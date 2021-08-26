@@ -23,4 +23,5 @@ object Versions {
     const val glide = "4.12.0"
     const val sql_chiper = "4.4.0"
     const val sqlite_ktx = "2.1.0"
+    const val leak_canary = "2.4"
 }

@@ -67,4 +67,9 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
             hasFixedSize()
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter.onItemClick = null
+    }
 }

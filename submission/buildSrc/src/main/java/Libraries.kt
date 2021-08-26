@@ -24,6 +24,7 @@ object Libraries {
     const val activity_ktx = "androidx.activity:activity-ktx:${Versions.activity_ktx}"
     const val fragment_ktx = "androidx.fragment:fragment-ktx:$${Versions.fragment_ktx}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val leak_canary = "com.squareup.leakcanary:leakcanary-android:${Versions.leak_canary}"
 }
 
 object TestLibraries{

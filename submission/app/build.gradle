@@ -20,7 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dynamicFeatures = [':favorite']
+    dynamicFeatures = [Modules.favorite]
 }
 
 dependencies {
@@ -31,6 +31,8 @@ dependencies {
     implementation Libraries.material_design
     implementation Libraries.constraint_layout
     implementation Libraries.glide
+
+    debugImplementation Libraries.leak_canary
 
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.junit_ext
