@@ -16,7 +16,7 @@ jobs:
           key: android-orb-v1-
       - run:
           name: Chmod permissions
-          command: sudo chmod +x submissions/gradlew
+          command: sudo chmod +x submission/gradlew
       - run:
           name: Download Dependencies
           command: |
