@@ -1,0 +1,47 @@
+version: 2.1
+ 
+orbs:
+  android: circleci/android@0.2.1
+ 
+jobs:
+  build:
+    executor: android/android
+    working_directory: ~/code
+    environment:
+      JVM_OPTS: -Xmx2048m
+      GRADLE_OPTS: -Xmx1536m -XX:+HeapDumpOnOutOfMemoryError -Dorg.gradle.caching=true -Dorg.gradle.configureondemand=true -Dkotlin.compiler.execution.strategy=in-process -Dkotlin.incremental=false
+    steps:
+      - checkout
+      - restore_cache:
+          key: android-orb-v1-
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x submission/gradlew
+      - run:
+          name: Download Dependencies
+          command: |
+            cd submission/
+            ./gradlew androidDependencies
+      - save_cache:
+          key: 'android-orb-v1-{{ epoch }}'
+          paths:
+            - ~/.android/build-cache
+            - ~/.android/cache
+      - run:
+          name: Run Build
+          command: |
+            cd submission/
+            ./gradlew build
+      - store_artifacts: 
+          path: submissions/app/build/reports
+          destination: reports
+      - run:
+          name: Run Tests
+          command: |
+            cd submission/
+            ./gradlew lint test
+      - store_test_results:
+          path: submission/app/build/test-results
+      - store_artifacts:  
+          path: submission/app/build/outputs/apk/debug/
+          destination: artifact-file
