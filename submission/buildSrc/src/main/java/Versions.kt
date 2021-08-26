@@ -21,4 +21,10 @@ object Versions {
     const val fragment_ktx = "1.3.6"
     const val annotation = "1.2.0"
     const val glide = "4.12.0"
+    const val sql_chiper = "4.4.0"
+    const val sqlite_ktx = "2.1.0"
+    const val leak_canary = "2.4"
+    const val mockito = "3.12.4"
+    const val coroutine_test = "1.5.1"
+    const val arch_core_testing = "2.1.0"
 }
