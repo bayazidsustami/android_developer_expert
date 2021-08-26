@@ -16,20 +16,20 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class EventRepositoryTest{
-    @get:Rule val instantTaskExecutorRule = InstantTaskExecutorRule()
+    @get:Rule
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    @get:Rule val testCoroutineRule = CoroutineTestRule()
+    @get:Rule
+    val testCoroutineRule = CoroutineTestRule()
 
-    @Mock private lateinit var remoteDataSource : EventRemoteDataSource
-    @Mock private lateinit var localDataSource: EventLocalDataSource
+    private var remoteDataSource : EventRemoteDataSource = mock(EventRemoteDataSource::class.java)
+    private var localDataSource: EventLocalDataSource = mock(EventLocalDataSource::class.java)
 
     private lateinit var repository: EventRepository
 

@@ -35,6 +35,7 @@ object TestLibraries{
     const val annotationX = "androidx.annotation:annotation:${Versions.annotation}"
     const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockito_inline = "org.mockito:mockito-inline:${Versions.mockito}"
+    const val mockito_android = "org.mockito:mockito-android:${Versions.mockito}"
     const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutine_test}"
     const val arch_core = "androidx.arch.core:core-testing:${Versions.arch_core_testing}"
 }
