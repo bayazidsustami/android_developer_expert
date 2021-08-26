@@ -21,4 +21,6 @@ object Versions {
     const val fragment_ktx = "1.3.6"
     const val annotation = "1.2.0"
     const val glide = "4.12.0"
+    const val sql_chiper = "4.4.0"
+    const val sqlite_ktx = "2.1.0"
 }

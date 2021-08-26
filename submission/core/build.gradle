@@ -49,6 +49,9 @@ dependencies {
     kapt Libraries.room_compiler
     api Libraries.room_ktx
 
+    implementation Libraries.sql_chiper
+    implementation Libraries.sqlite_ktx
+
     implementation Libraries.hilt
     kapt Libraries.hilt_compiler
 

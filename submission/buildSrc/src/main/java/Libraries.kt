@@ -11,6 +11,8 @@ object Libraries {
     const val room = "androidx.room:room-runtime:${Versions.room}"
     const val room_compiler = "androidx.room:room-compiler:${Versions.room}"
     const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
+    const val sql_chiper = "net.zetetic:android-database-sqlcipher:${Versions.sql_chiper}"
+    const val sqlite_ktx = "androidx.sqlite:sqlite-ktx:${Versions.sqlite_ktx}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val okhttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logger}"
