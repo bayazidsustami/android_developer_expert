@@ -26,4 +26,5 @@ object Versions {
     const val leak_canary = "2.4"
     const val mockito = "3.2.4"
     const val coroutine_test = "1.5.1"
+    const val arch_core_testing = "2.1.0"
 }

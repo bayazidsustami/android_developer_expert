@@ -65,4 +65,5 @@ dependencies {
     testImplementation TestLibraries.mockito_core
     testImplementation TestLibraries.mockito_inline
     testImplementation TestLibraries.coroutine
+    testImplementation TestLibraries.arch_core
 }

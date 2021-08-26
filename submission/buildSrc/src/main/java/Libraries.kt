@@ -36,4 +36,5 @@ object TestLibraries{
     const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockito_inline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutine_test}"
+    const val arch_core = "androidx.arch.core:core-testing:${Versions.arch_core_testing}"
 }
