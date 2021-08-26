@@ -63,7 +63,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
     private fun initAdapter(){
         with(binding.rvListEvent){
             adapter = this@HomeFragment.adapter
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             hasFixedSize()
         }
     }

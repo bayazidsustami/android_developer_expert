@@ -63,8 +63,13 @@ class FavoriteFragment: BaseFragment<FragmentFavoriteBinding>(
     private fun initAdapter(){
         with(binding.rvListEvent){
             adapter = this@FavoriteFragment.adapter
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             hasFixedSize()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter.onItemClick = null
     }
 }
