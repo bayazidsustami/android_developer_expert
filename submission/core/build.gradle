@@ -62,4 +62,7 @@ dependencies {
     implementation Libraries.coroutine_android
 
     testImplementation TestLibraries.junit
+    testImplementation TestLibraries.mockito_core
+    testImplementation TestLibraries.mockito_inline
+    testImplementation TestLibraries.coroutine
 }

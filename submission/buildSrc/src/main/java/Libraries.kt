@@ -33,4 +33,7 @@ object TestLibraries{
     const val espresso_core = "androidx.test.espresso:espresso-core:${Versions.espresso_core}"
     const val navigation = "androidx.navigation:navigation-testing:${Versions.navigation}"
     const val annotationX = "androidx.annotation:annotation:${Versions.annotation}"
+    const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
+    const val mockito_inline = "org.mockito:mockito-inline:${Versions.mockito}"
+    const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutine_test}"
 }
